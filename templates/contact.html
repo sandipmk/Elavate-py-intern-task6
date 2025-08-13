@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!--heade nav-->
+    <header>
+    <nav class="navbar">
+      <div class="logo"><i class="fas fa-code"></i> MyPortfolio</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{{ url_for('index') }}"> Home</a></li>
+        <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--print store message with flask-->
+  <div class="center">{% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+  </div>
+
+  <!--contact me-->
+  <section class="contact section" id="contact">
+       <form method="post" action="{{ url_for('contact') }}" class="contact-form">
+          <h2 class="section-title"> Contact Me</h2>
+            <div class="form-group floating-label">
+              <input type="text" id="name" required placeholder=" ">
+              <label for="name"><i class="fas fa-user"></i> Your Name</label>
+            </div>
+            <div class="form-group floating-label">
+              <input type="email" id="email" required placeholder=" ">
+              <label for="email">Your Email</label>
+            </div>
+            <div class="form-group floating-label">
+              <textarea id="message" required placeholder=" "></textarea>
+              <label for="message"> Your Message</label>
+            </div>
+            <button type="submit" class="btn gradient-btn">
+              <span>Send Message</span>
+            </button>
+            <button type="" class="btn gradient-btn">
+              <a href="{{ url_for('index') }}">Back to Home</a>
+            </button>
+          </form>
+        <br>
+  </section>
+</body>
+</html>

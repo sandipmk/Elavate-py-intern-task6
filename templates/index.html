@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><i class="fas fa-code"></i> MyPortfolio</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"> About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="about-container">
+        <div class="about-info">
+          <h1>Hello, I'm <span class="highlight">Sandip Gengadiya</span></h1>
+          <h2><span class="highlight">welcome to my Portfolio</span></h2>
+          <p>
+            I'm passionate about building interactive web applications using Python and Flask.
+            I love exploring new technologies and solving real-world problems.
+          </p>
+          <ul class="personal-details">
+            <li> <strong>Email:</strong> sandipmk1204@gmail.com</li>
+            <li> <strong>Location:</strong> Surat, India</li>
+            <li> <strong>Profession:</strong> Web Developer</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+   <!-- Contact Section -->
+    <div class="center ">
+         <li>Contact: <a href="{{ url_for('contact') }}" style="text-decoration: underline; color: red;">Contact Me</a></li>
+    </div>
+  </main>
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-details">
+        <h3>Contact</h3>
+        <p>Surat , India</p>
+        <p>sandipmk1204@gmail.com</p>
+        <p>+91 9624680243</p>
+      </div>
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <a href="#" target="_blank" aria-label="GitHub"> GitHub</a><br>
+        <a href="#" target="_blank" aria-label="LinkedIn">LinkedIn</a><br>
+        <a href="#" target="_blank" aria-label="Twitter">Twitter</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
